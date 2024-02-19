@@ -17,6 +17,17 @@ class RouteOneScreen extends StatelessWidget {
         'arguments : ${number.toString()}',
         textAlign: TextAlign.center,
       ),
+      ElevatedButton(onPressed: (){
+        print(Navigator.of(context).canPop());
+      },
+        child: Text('Can Pop'),
+      ),
+      ElevatedButton(onPressed: (){
+        // 뒤로 가기에 값이 없을 때 넘어가지 않게 방지
+        Navigator.of(context).maybePop();
+      },
+        child: Text('Maybe Pop'),
+      ),
       ElevatedButton(
           onPressed: () {
             // [HomeScreen(), RouteOne(), RouteTwo()]
